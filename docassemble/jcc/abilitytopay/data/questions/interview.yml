@@ -38,7 +38,7 @@ question: |
 
 fields:
 - "What California county did you get the citation in?": county
-  datatype: yesno
+  datatype: yesnoradio
 #   choices:
 #   - "Shasta": Shasta
 #   - "Tulare": Tulare
