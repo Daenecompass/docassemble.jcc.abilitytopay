@@ -450,7 +450,6 @@ continue button label: Submit
 ---
 mandatory: True
 code: |
-  before_you_start
   county
   citation_number
   verify_citation
