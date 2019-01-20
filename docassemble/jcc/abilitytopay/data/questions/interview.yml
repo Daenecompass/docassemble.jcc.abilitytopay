@@ -20,9 +20,6 @@ code: |
 field: before_you_start
 question: |
   Request a Fine Reduction
-fields:
-  - "Do you like apricots?": likes_apricots
-    datatype: yesnoradio
 subquestion: |
   *This online system is an optional way to request a fine reduction for yout traffic ticket in cases of financial need.*
 
@@ -58,19 +55,19 @@ fields:
 #   show if: no_citation_number
 # - What is your Driver's License Number?: license_number
 #   show if: no_citation_number
----
-code: |
-  if not no_citation_number:
-    citation_data = fetch_citation_data(citation_number, county)
-    if citation_data['data']:
-        case_information = citation_data['data']
-        violation_date = date_from_iso8601(case_information['charges'][0]['violationDate'])
-        total_due = format_money(case_information['totalDueAmt'])
-        first_name = case_information['firstName']
-        last_name = case_information['lastName']
-    else:
-        log("No match was found. Please check the county and citation number. Try again. Or click 'I don't have my citation' to search another way", 'danger')
-        reconsider('county')
+# ---
+# code: |
+#   if not no_citation_number:
+#     citation_data = fetch_citation_data(citation_number, county)
+#     if citation_data['data']:
+#         case_information = citation_data['data']
+#         violation_date = date_from_iso8601(case_information['charges'][0]['violationDate'])
+#         total_due = format_money(case_information['totalDueAmt'])
+#         first_name = case_information['firstName']
+#         last_name = case_information['lastName']
+#     else:
+#         log("No match was found. Please check the county and citation number. Try again. Or click 'I don't have my citation' to search another way", 'danger')
+#         reconsider('county')
 ---
 question: |
   Request to Court
