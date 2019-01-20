@@ -31,7 +31,7 @@ subquestion: |
   * Request more time to pay your ticket
 
   If you wish to contest the ticket or resolve the matter in person, please contact your Court. Refer to your reminder notice.
-
+yesno: target_variable
 ---
 question: |
   Look Up Your Citation
