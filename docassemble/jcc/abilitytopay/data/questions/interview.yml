@@ -17,7 +17,7 @@ content: |
 code: |
    help_tip_text = "This is text that shows in a tooltip."
 ---
-field: before_you_start
+# field: before_you_start
 question: |
   Request a Fine Reduction
 fields:
