@@ -17,23 +17,23 @@ content: |
 code: |
    help_tip_text = "This is text that shows in a tooltip."
 ---
-# field: before_you_start
+field: before_you_start
 question: |
   Request a Fine Reduction
 fields:
   - "Do you like apricots?": likes_apricots
     datatype: yesnoradio
-# subquestion: |
-#   *This online system is an optional way to request a fine reduction for yout traffic ticket in cases of financial need.*
+subquestion: |
+  *This online system is an optional way to request a fine reduction for yout traffic ticket in cases of financial need.*
 
-#   **Use this tool to:**
+  **Use this tool to:**
 
-#   * Request a reduction in your traffic fine
-#   * Request a payment plan
-#   * Request Community Service
-#   * Request more time to pay your ticket
+  * Request a reduction in your traffic fine
+  * Request a payment plan
+  * Request Community Service
+  * Request more time to pay your ticket
 
-#   If you wish to contest the ticket or resolve the matter in person, please contact your Court. Refer to your reminder notice.
+  If you wish to contest the ticket or resolve the matter in person, please contact your Court. Refer to your reminder notice.
 
 ---
 question: |
@@ -41,22 +41,23 @@ question: |
 
 fields:
 - "What California county did you get the citation in?": county
-  choices:
-  - "Shasta": Shasta
-  - "Tulare": Tulare
-- "What's the citation number?": citation_number
-  required: false
-- "I don't have my citation number": no_citation_number
   datatype: yesno
-- What is your first name?: first_name
-  show if: no_citation_number
-- What is your last name?: last_name
-  show if: no_citation_number
-- What's your date of birth?: dob
-  datatype: date
-  show if: no_citation_number
-- What is your Driver's License Number?: license_number
-  show if: no_citation_number
+#   choices:
+#   - "Shasta": Shasta
+#   - "Tulare": Tulare
+# - "What's the citation number?": citation_number
+#   required: false
+# - "I don't have my citation number": no_citation_number
+#   datatype: yesno
+# - What is your first name?: first_name
+#   show if: no_citation_number
+# - What is your last name?: last_name
+#   show if: no_citation_number
+# - What's your date of birth?: dob
+#   datatype: date
+#   show if: no_citation_number
+# - What is your Driver's License Number?: license_number
+#   show if: no_citation_number
 ---
 code: |
   if not no_citation_number:
@@ -450,6 +451,7 @@ continue button label: Submit
 ---
 mandatory: True
 code: |
+  before_you_start
   county
   citation_number
   verify_citation
