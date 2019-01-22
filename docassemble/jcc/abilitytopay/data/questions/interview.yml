@@ -18,20 +18,25 @@ code: |
    help_tip_text = "This is text that shows in a tooltip."
 ---
 field: before_you_start
+# question: |
+#   Request a Fine Reduction
+# subquestion: |
+#   *This online system is an optional way to request a fine reduction for yout traffic ticket in cases of financial need.*
+
+#   **Use this tool to:**
+
+#   * Request a reduction in your traffic fine
+#   * Request a payment plan
+#   * Request Community Service
+#   * Request more time to pay your ticket
+
+#   If you wish to contest the ticket or resolve the matter in person, please contact your Court. Refer to your reminder notice.
+
 question: |
-  Request a Fine Reduction
-subquestion: |
-  *This online system is an optional way to request a fine reduction for yout traffic ticket in cases of financial need.*
-
-  **Use this tool to:**
-
-  * Request a reduction in your traffic fine
-  * Request a payment plan
-  * Request Community Service
-  * Request more time to pay your ticket
-
-  If you wish to contest the ticket or resolve the matter in person, please contact your Court. Refer to your reminder notice.
-
+  Please provide the following information.
+fields:
+  - "Do you like apricots?": likes_apricots
+    datatype: yesnoradio
 ---
 question: |
   Look Up Your Citation
