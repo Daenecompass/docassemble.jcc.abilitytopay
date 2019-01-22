@@ -504,6 +504,19 @@ select {
   }
 }
 
+.fieldpart {
+  &.inline {
+    &.col-md-8 {
+      flex: none!important;
+
+      input.labelauty + label {
+        float: left;
+        margin-right: 2rem;
+      }
+    }
+  }
+}
+
 .yesnospacing {
   .col-md-8 {
     flex: 0 0 100% !important;

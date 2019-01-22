@@ -38,36 +38,35 @@ question: |
 
 fields:
 - "What California county did you get the citation in?": county
-  datatype: yesnoradio
-#   choices:
-#   - "Shasta": Shasta
-#   - "Tulare": Tulare
-# - "What's the citation number?": citation_number
-#   required: false
-# - "I don't have my citation number": no_citation_number
-#   datatype: yesno
-# - What is your first name?: first_name
-#   show if: no_citation_number
-# - What is your last name?: last_name
-#   show if: no_citation_number
-# - What's your date of birth?: dob
-#   datatype: date
-#   show if: no_citation_number
-# - What is your Driver's License Number?: license_number
-#   show if: no_citation_number
-# ---
-# code: |
-#   if not no_citation_number:
-#     citation_data = fetch_citation_data(citation_number, county)
-#     if citation_data['data']:
-#         case_information = citation_data['data']
-#         violation_date = date_from_iso8601(case_information['charges'][0]['violationDate'])
-#         total_due = format_money(case_information['totalDueAmt'])
-#         first_name = case_information['firstName']
-#         last_name = case_information['lastName']
-#     else:
-#         log("No match was found. Please check the county and citation number. Try again. Or click 'I don't have my citation' to search another way", 'danger')
-#         reconsider('county')
+  choices:
+  - "Shasta": Shasta
+  - "Tulare": Tulare
+- "What's the citation number?": citation_number
+  required: false
+- "I don't have my citation number": no_citation_number
+  datatype: yesno
+- What is your first name?: first_name
+  show if: no_citation_number
+- What is your last name?: last_name
+  show if: no_citation_number
+- What's your date of birth?: dob
+  datatype: date
+  show if: no_citation_number
+- What is your Driver's License Number?: license_number
+  show if: no_citation_number
+---
+code: |
+  if not no_citation_number:
+    citation_data = fetch_citation_data(citation_number, county)
+    if citation_data['data']:
+        case_information = citation_data['data']
+        violation_date = date_from_iso8601(case_information['charges'][0]['violationDate'])
+        total_due = format_money(case_information['totalDueAmt'])
+        first_name = case_information['firstName']
+        last_name = case_information['lastName']
+    else:
+        log("No match was found. Please check the county and citation number. Try again. Or click 'I don't have my citation' to search another way", 'danger')
+        reconsider('county')
 ---
 question: |
   Request to Court

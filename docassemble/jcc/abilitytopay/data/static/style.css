@@ -6485,6 +6485,12 @@ select {
   flex: 0 0 100% !important;
   max-width: 100% !important; }
 
+.fieldpart.inline.col-md-8 {
+  flex: none !important; }
+  .fieldpart.inline.col-md-8 input.labelauty + label {
+    float: left;
+    margin-right: 2rem; }
+
 .yesnospacing .col-md-8 {
   flex: 0 0 100% !important;
   max-width: 100% !important; }
