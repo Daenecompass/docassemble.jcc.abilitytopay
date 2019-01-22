@@ -68,8 +68,12 @@ code: |
         log("No match was found. Please check the county and citation number. Try again. Or click 'I don't have my citation' to search another way", 'danger')
         reconsider('county')
 ---
+code: |
+   help_tip_text = "This is text that shows in a tooltip."
+---
 question: |
-  Request to Court
+  Request to Court 
+  ${help_tip}
 fields:
 - "Do you like apricots?": likes_apricots
   datatype: yesnoradio
