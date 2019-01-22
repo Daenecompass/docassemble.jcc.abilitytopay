@@ -37,23 +37,28 @@ question: |
   Look Up Your Citation
 
 fields:
-- "What California county did you get the citation in?": county
-  choices:
-  - "Shasta": Shasta
-  - "Tulare": Tulare
-- "What's the citation number?": citation_number
-  required: false
-- "I don't have my citation number": no_citation_number
-  datatype: yesno
-- What is your first name?: first_name
-  show if: no_citation_number
-- What is your last name?: last_name
-  show if: no_citation_number
-- What's your date of birth?: dob
-  datatype: date
-  show if: no_citation_number
-- What is your Driver's License Number?: license_number
-  show if: no_citation_number
+  - "Do you like apricots?": likes_apricots
+    datatype: yesnoradio
+  - "Do you like pineapple?": dislikes_pineapple
+    datatype: noyesradio
+
+# - "What California county did you get the citation in?": county
+#   choices:
+#   - "Shasta": Shasta
+#   - "Tulare": Tulare
+# - "What's the citation number?": citation_number
+#   required: false
+# - "I don't have my citation number": no_citation_number
+#   datatype: yesno
+# - What is your first name?: first_name
+#   show if: no_citation_number
+# - What is your last name?: last_name
+#   show if: no_citation_number
+# - What's your date of birth?: dob
+#   datatype: date
+#   show if: no_citation_number
+# - What is your Driver's License Number?: license_number
+#   show if: no_citation_number
 ---
 code: |
   if not no_citation_number:
